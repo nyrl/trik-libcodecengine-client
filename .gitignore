@@ -1,12 +1,11 @@
-config.log
-config.status
-autom4te.cache
-*libtool
+/autom4te.cache
+/config.h
+/config.h.in~
+/config.log
+/config.status
+/*libtool
+/stamp-h1
 Makefile
-
-config.h
-config.h.in~
-stamp-h1
 
 /build/.libs
 /build/.deps
