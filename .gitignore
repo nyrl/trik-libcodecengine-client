@@ -9,5 +9,8 @@ Makefile
 
 /build/.libs
 /build/.deps
+/build/*.o
+/build/*.lo
+/build/*.la
 
 libcodecengine-client.pc
