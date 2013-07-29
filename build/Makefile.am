@@ -73,11 +73,12 @@ libpriv_cstubs_la_SOURCES		= \
 
 
 
-#TESTS					= test_cmem_alloc
+TESTS					= test_cmem_alloc
 
-#noinst_PROGRAMS				= $(TESTS)
+noinst_PROGRAMS				= $(TESTS)
 
-#test_cmem_alloc_SOURCES			= $(top_srcdir)/tests/test_cmem_alloc.c
-#test_cmem_alloc_LDFLAGS			= $(LDFLAGS) $(TIDSP_EXPORT_LDFLAGS)
-#test_cmem_alloc_LDADD			= $(LDADD) $(TIDSP_EXPORT_LDLIBS)
+test_cmem_alloc_SOURCES			= $(top_srcdir)/tests/test_cmem_alloc.c
+test_cmem_alloc_LDFLAGS			= $(LDFLAGS) $(TIDSP_EXPORT_LDFLAGS)
+test_cmem_alloc_LDADD			= $(LDLIBS) $(TIDSP_EXPORT_LDLIBS)
+
 
