@@ -1,16 +1,16 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.65])
-AC_INIT([libcodecengine-client], [0.0.1-trunk])
-AM_INIT_AUTOMAKE([foreign color-tests -Wall -Werror])
+AC_PREREQ([2.69])
+AC_INIT([libcodecengine-client],[0.0.1-trunk])
+AM_INIT_AUTOMAKE([foreign color-tests -Wall ])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 
 # We want more functions
-AC_GNU_SOURCE
+AC_USE_SYSTEM_EXTENSIONS
 
 
 # Checks for programs.
@@ -22,7 +22,7 @@ AM_PROG_AR
 
 # Checks for libraries.
 LT_INIT([disable-shared]) # OSAL stuff has unresolved symbols at link time if linked as DSO
-AC_PROG_LIBTOOL
+LT_INIT
 PKG_PROG_PKG_CONFIG
 
 
