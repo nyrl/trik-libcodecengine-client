@@ -62,14 +62,10 @@ libpriv_osal_la_SOURCES			= \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/LoggerSysTID_posix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/LoggerFlex.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/HeapStdAlign.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp \
 					  $(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
 
-libpriv_cstubs_la_SOURCES		= \
-					  $(TIDSP_PATH_CSTUBS_SRC)/LoggerPosix.c
+libpriv_cstubs_la_SOURCES		=
 
 
 
