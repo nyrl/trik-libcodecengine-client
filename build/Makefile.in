@@ -135,8 +135,7 @@ am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
 libcodecengine_client_la_DEPENDENCIES = libpriv_rtcfg.la \
 	libpriv_osal.la libpriv_cstubs.la
-am__dirstamp = $(am__leading_dot)dirstamp
-am_libcodecengine_client_la_OBJECTS = $(top_srcdir)/src/main.lo
+am_libcodecengine_client_la_OBJECTS = main.lo
 nodist_libcodecengine_client_la_OBJECTS =
 libcodecengine_client_la_OBJECTS =  \
 	$(am_libcodecengine_client_la_OBJECTS) \
@@ -146,73 +145,34 @@ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
 libpriv_cstubs_la_LIBADD =
-am_libpriv_cstubs_la_OBJECTS =  \
-	$(TIDSP_PATH_CSTUBS_SRC)/LoggerPosix.lo
+am_libpriv_cstubs_la_OBJECTS = LoggerPosix.lo
 libpriv_cstubs_la_OBJECTS = $(am_libpriv_cstubs_la_OBJECTS)
 libpriv_osal_la_LIBADD =
-am_libpriv_osal_la_OBJECTS =  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/LoggerSysTID_posix.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/LoggerFlex.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/HeapStdAlign.lo \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.lo \
-	$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.lo
+am_libpriv_osal_la_OBJECTS = Assert.lo Core-label.lo Core-mem.lo \
+	Core-params.lo Diags.lo Error.lo Gate.lo GateNull.lo \
+	HeapStd.lo Log.lo LoggerBuf.lo LoggerSys.lo Memory.lo \
+	Registry.lo Rta.lo Startup.lo SysMin.lo SysStd.lo System.lo \
+	Text.lo Timestamp.lo TimestampNull.lo TimestampStd.lo Cache.lo \
+	CacheSupportNull.lo GateH.lo GateProcess.lo \
+	GateProcessSupportNull.lo GateThread.lo \
+	GateThreadSupportNull.lo Semaphore.lo SemProcess.lo \
+	SemThread.lo Sync.lo SyncGeneric.lo SyncNull.lo \
+	SyncSemThread.lo Thread.lo GateProcessSupport.lo \
+	GateThreadSupport.lo SemProcessSupport.lo SemThreadSupport.lo \
+	ThreadSupport.lo TimestampPosix.lo xdc_init.lo \
+	preConfig_pv5T.lo
 libpriv_osal_la_OBJECTS = $(am_libpriv_osal_la_OBJECTS)
 libpriv_rtcfg_la_LIBADD =
-am_libpriv_rtcfg_la_OBJECTS = $(TIDSP_PATH_RTCFG_SRC)/rtcfg.lo \
-	$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.lo \
-	$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.lo
+am_libpriv_rtcfg_la_OBJECTS = rtcfg.lo rtcfg_fcinit.lo \
+	rtcfg_remote_config.lo
 libpriv_rtcfg_la_OBJECTS = $(am_libpriv_rtcfg_la_OBJECTS)
 am__EXEEXT_1 = test_cmem_alloc$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
-am_test_cmem_alloc_OBJECTS =  \
-	$(top_srcdir)/tests/test_cmem_alloc.$(OBJEXT)
+am_test_cmem_alloc_OBJECTS = test_cmem_alloc.$(OBJEXT)
 test_cmem_alloc_OBJECTS = $(am_test_cmem_alloc_OBJECTS)
 am__DEPENDENCIES_1 =
-test_cmem_alloc_DEPENDENCIES = $(am__DEPENDENCIES_1)
+test_cmem_alloc_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	libcodecengine-client.la
 test_cmem_alloc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(AM_CFLAGS) $(CFLAGS) $(test_cmem_alloc_LDFLAGS) $(LDFLAGS) \
@@ -614,8 +574,6 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = -I$(top_srcdir)/include -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-maybe-uninitialized -fno-strict-aliasing
-
-#LDADD			= libcodecengine-client.la
 lib_LTLIBRARIES = libcodecengine-client.la
 nodist_libcodecengine_client_la_SOURCES = $(top_srcdir)/config.h
 libcodecengine_client_la_SOURCES = $(top_srcdir)/src/main.c
@@ -671,18 +629,15 @@ libpriv_osal_la_SOURCES = \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/LoggerSysTID_posix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/LoggerFlex.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/HeapStdAlign.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp \
 					  $(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
 
 libpriv_cstubs_la_SOURCES = \
-					  $(TIDSP_PATH_CSTUBS_SRC)/LoggerPosix.c
+					  $(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c
 
 test_cmem_alloc_SOURCES = $(top_srcdir)/tests/test_cmem_alloc.c
 test_cmem_alloc_LDFLAGS = $(LDFLAGS) $(TIDSP_EXPORT_LDFLAGS) -L$(builddir)/.libs
-test_cmem_alloc_LDADD = $(LDADD) $(TIDSP_EXPORT_LDLIBS)
+test_cmem_alloc_LDADD = $(LDADD) $(TIDSP_EXPORT_LDLIBS) libcodecengine-client.la
 all: all-am
 
 .SUFFIXES:
@@ -762,212 +717,15 @@ clean-noinstLTLIBRARIES:
 	  echo rm -f $${locs}; \
 	  rm -f $${locs}; \
 	}
-$(top_srcdir)/src/$(am__dirstamp):
-	@$(MKDIR_P) $(top_srcdir)/src
-	@: > $(top_srcdir)/src/$(am__dirstamp)
-$(top_srcdir)/src/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(top_srcdir)/src/$(DEPDIR)
-	@: > $(top_srcdir)/src/$(DEPDIR)/$(am__dirstamp)
-$(top_srcdir)/src/main.lo: $(top_srcdir)/src/$(am__dirstamp) \
-	$(top_srcdir)/src/$(DEPDIR)/$(am__dirstamp)
 
 libcodecengine-client.la: $(libcodecengine_client_la_OBJECTS) $(libcodecengine_client_la_DEPENDENCIES) $(EXTRA_libcodecengine_client_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(LINK) -rpath $(libdir) $(libcodecengine_client_la_OBJECTS) $(libcodecengine_client_la_LIBADD) $(LIBS)
-$(TIDSP_PATH_CSTUBS_SRC)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_CSTUBS_SRC)
-	@: > $(TIDSP_PATH_CSTUBS_SRC)/$(am__dirstamp)
-$(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)
-	@: > $(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_CSTUBS_SRC)/LoggerPosix.lo:  \
-	$(TIDSP_PATH_CSTUBS_SRC)/$(am__dirstamp) \
-	$(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/$(am__dirstamp)
 
 libpriv_cstubs.la: $(libpriv_cstubs_la_OBJECTS) $(libpriv_cstubs_la_DEPENDENCIES) $(EXTRA_libpriv_cstubs_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(LINK)  $(libpriv_cstubs_la_OBJECTS) $(libpriv_cstubs_la_LIBADD) $(LIBS)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime
-	@: > $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl
-	@: > $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/LoggerSysTID_posix.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/LoggerFlex.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/HeapStdAlign.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.lo:  \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_SRC)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_SRC)
-	@: > $(TIDSP_PATH_OSAL_SRC)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)
-	@: > $(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.lo:  \
-	$(TIDSP_PATH_OSAL_SRC)/$(am__dirstamp) \
-	$(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/$(am__dirstamp)
 
 libpriv_osal.la: $(libpriv_osal_la_OBJECTS) $(libpriv_osal_la_DEPENDENCIES) $(EXTRA_libpriv_osal_la_DEPENDENCIES) 
 	$(AM_V_CXXLD)$(CXXLINK)  $(libpriv_osal_la_OBJECTS) $(libpriv_osal_la_LIBADD) $(LIBS)
-$(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_RTCFG_SRC)
-	@: > $(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp)
-$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)
-	@: > $(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_RTCFG_SRC)/rtcfg.lo:  \
-	$(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp) \
-	$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.lo:  \
-	$(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp) \
-	$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)
-$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.lo:  \
-	$(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp) \
-	$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)
 
 libpriv_rtcfg.la: $(libpriv_rtcfg_la_OBJECTS) $(libpriv_rtcfg_la_DEPENDENCIES) $(EXTRA_libpriv_rtcfg_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(LINK)  $(libpriv_rtcfg_la_OBJECTS) $(libpriv_rtcfg_la_LIBADD) $(LIBS)
@@ -980,15 +738,6 @@ clean-noinstPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-$(top_srcdir)/tests/$(am__dirstamp):
-	@$(MKDIR_P) $(top_srcdir)/tests
-	@: > $(top_srcdir)/tests/$(am__dirstamp)
-$(top_srcdir)/tests/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) $(top_srcdir)/tests/$(DEPDIR)
-	@: > $(top_srcdir)/tests/$(DEPDIR)/$(am__dirstamp)
-$(top_srcdir)/tests/test_cmem_alloc.$(OBJEXT):  \
-	$(top_srcdir)/tests/$(am__dirstamp) \
-	$(top_srcdir)/tests/$(DEPDIR)/$(am__dirstamp)
 
 test_cmem_alloc$(EXEEXT): $(test_cmem_alloc_OBJECTS) $(test_cmem_alloc_DEPENDENCIES) $(EXTRA_test_cmem_alloc_DEPENDENCIES) 
 	@rm -f test_cmem_alloc$(EXEEXT)
@@ -996,149 +745,480 @@ test_cmem_alloc$(EXEEXT): $(test_cmem_alloc_OBJECTS) $(test_cmem_alloc_DEPENDENC
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_CSTUBS_SRC)/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_CSTUBS_SRC)/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/*.lo
-	-rm -f $(TIDSP_PATH_OSAL_SRC)/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_OSAL_SRC)/*.lo
-	-rm -f $(TIDSP_PATH_RTCFG_SRC)/*.$(OBJEXT)
-	-rm -f $(TIDSP_PATH_RTCFG_SRC)/*.lo
-	-rm -f $(top_srcdir)/src/*.$(OBJEXT)
-	-rm -f $(top_srcdir)/src/*.lo
-	-rm -f $(top_srcdir)/tests/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/LoggerPosix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/LoggerSysTID_posix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/GateProcessSupport.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/GateThreadSupport.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/SemProcessSupport.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/SemThreadSupport.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/ThreadSupport.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/TimestampPosix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/LoggerFlex.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/HeapStdAlign.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Assert.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Core-label.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Core-mem.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Core-params.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Diags.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Error.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Gate.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/GateNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/HeapStd.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Log.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/LoggerBuf.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/LoggerSys.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Memory.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Registry.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Rta.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Startup.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/SysMin.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/SysStd.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/System.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Text.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/Timestamp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/TimestampNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/TimestampStd.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/xdc_init.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/Cache.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/CacheSupportNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/GateH.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/GateProcess.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/GateProcessSupportNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/GateThread.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/GateThreadSupportNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/SemProcess.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/SemThread.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/Semaphore.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/Sync.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/SyncGeneric.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/SyncNull.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/SyncSemThread.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/Thread.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/preConfig_pv5T.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/rtcfg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/rtcfg_fcinit.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/rtcfg_remote_config.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(top_srcdir)/src/$(DEPDIR)/main.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@$(top_srcdir)/tests/$(DEPDIR)/test_cmem_alloc.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Assert.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Cache.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CacheSupportNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Core-label.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Core-mem.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Core-params.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Diags.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Error.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Gate.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateH.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateProcess.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateProcessSupport.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateProcessSupportNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateThread.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateThreadSupport.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GateThreadSupportNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/HeapStd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Log.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LoggerBuf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LoggerPosix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LoggerSys.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Memory.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Registry.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Rta.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SemProcess.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SemProcessSupport.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SemThread.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SemThreadSupport.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Semaphore.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Startup.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Sync.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SyncGeneric.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SyncNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SyncSemThread.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SysMin.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SysStd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/System.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Text.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Thread.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ThreadSupport.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Timestamp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TimestampNull.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TimestampPosix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TimestampStd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preConfig_pv5T.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtcfg.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtcfg_fcinit.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rtcfg_remote_config.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_cmem_alloc.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xdc_init.Plo@am__quote@
 
 .c.o:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ $<
 
 .c.obj:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
+main.lo: $(top_srcdir)/src/main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT main.lo -MD -MP -MF $(DEPDIR)/main.Tpo -c -o main.lo `test -f '$(top_srcdir)/src/main.c' || echo '$(srcdir)/'`$(top_srcdir)/src/main.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/main.Tpo $(DEPDIR)/main.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(top_srcdir)/src/main.c' object='main.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o main.lo `test -f '$(top_srcdir)/src/main.c' || echo '$(srcdir)/'`$(top_srcdir)/src/main.c
+
+LoggerPosix.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT LoggerPosix.lo -MD -MP -MF $(DEPDIR)/LoggerPosix.Tpo -c -o LoggerPosix.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/LoggerPosix.Tpo $(DEPDIR)/LoggerPosix.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c' object='LoggerPosix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o LoggerPosix.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c
+
+Assert.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Assert.lo -MD -MP -MF $(DEPDIR)/Assert.Tpo -c -o Assert.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Assert.Tpo $(DEPDIR)/Assert.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c' object='Assert.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Assert.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Assert.c
+
+Core-label.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Core-label.lo -MD -MP -MF $(DEPDIR)/Core-label.Tpo -c -o Core-label.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Core-label.Tpo $(DEPDIR)/Core-label.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c' object='Core-label.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Core-label.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-label.c
+
+Core-mem.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Core-mem.lo -MD -MP -MF $(DEPDIR)/Core-mem.Tpo -c -o Core-mem.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Core-mem.Tpo $(DEPDIR)/Core-mem.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c' object='Core-mem.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Core-mem.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-mem.c
+
+Core-params.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Core-params.lo -MD -MP -MF $(DEPDIR)/Core-params.Tpo -c -o Core-params.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Core-params.Tpo $(DEPDIR)/Core-params.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c' object='Core-params.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Core-params.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Core-params.c
+
+Diags.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Diags.lo -MD -MP -MF $(DEPDIR)/Diags.Tpo -c -o Diags.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Diags.Tpo $(DEPDIR)/Diags.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c' object='Diags.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Diags.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Diags.c
+
+Error.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Error.lo -MD -MP -MF $(DEPDIR)/Error.Tpo -c -o Error.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Error.Tpo $(DEPDIR)/Error.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c' object='Error.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Error.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Error.c
+
+Gate.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Gate.lo -MD -MP -MF $(DEPDIR)/Gate.Tpo -c -o Gate.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Gate.Tpo $(DEPDIR)/Gate.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c' object='Gate.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Gate.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Gate.c
+
+GateNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateNull.lo -MD -MP -MF $(DEPDIR)/GateNull.Tpo -c -o GateNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateNull.Tpo $(DEPDIR)/GateNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c' object='GateNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/GateNull.c
+
+HeapStd.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT HeapStd.lo -MD -MP -MF $(DEPDIR)/HeapStd.Tpo -c -o HeapStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/HeapStd.Tpo $(DEPDIR)/HeapStd.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c' object='HeapStd.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o HeapStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/HeapStd.c
+
+Log.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Log.lo -MD -MP -MF $(DEPDIR)/Log.Tpo -c -o Log.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Log.Tpo $(DEPDIR)/Log.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c' object='Log.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Log.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Log.c
+
+LoggerBuf.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT LoggerBuf.lo -MD -MP -MF $(DEPDIR)/LoggerBuf.Tpo -c -o LoggerBuf.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/LoggerBuf.Tpo $(DEPDIR)/LoggerBuf.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c' object='LoggerBuf.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o LoggerBuf.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerBuf.c
+
+LoggerSys.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT LoggerSys.lo -MD -MP -MF $(DEPDIR)/LoggerSys.Tpo -c -o LoggerSys.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/LoggerSys.Tpo $(DEPDIR)/LoggerSys.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c' object='LoggerSys.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o LoggerSys.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/LoggerSys.c
+
+Memory.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Memory.lo -MD -MP -MF $(DEPDIR)/Memory.Tpo -c -o Memory.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Memory.Tpo $(DEPDIR)/Memory.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c' object='Memory.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Memory.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Memory.c
+
+Registry.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Registry.lo -MD -MP -MF $(DEPDIR)/Registry.Tpo -c -o Registry.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Registry.Tpo $(DEPDIR)/Registry.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c' object='Registry.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Registry.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Registry.c
+
+Rta.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Rta.lo -MD -MP -MF $(DEPDIR)/Rta.Tpo -c -o Rta.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Rta.Tpo $(DEPDIR)/Rta.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c' object='Rta.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Rta.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Rta.c
+
+Startup.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Startup.lo -MD -MP -MF $(DEPDIR)/Startup.Tpo -c -o Startup.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Startup.Tpo $(DEPDIR)/Startup.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c' object='Startup.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Startup.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Startup.c
+
+SysMin.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SysMin.lo -MD -MP -MF $(DEPDIR)/SysMin.Tpo -c -o SysMin.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SysMin.Tpo $(DEPDIR)/SysMin.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c' object='SysMin.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SysMin.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysMin.c
+
+SysStd.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SysStd.lo -MD -MP -MF $(DEPDIR)/SysStd.Tpo -c -o SysStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SysStd.Tpo $(DEPDIR)/SysStd.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c' object='SysStd.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SysStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/SysStd.c
+
+System.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT System.lo -MD -MP -MF $(DEPDIR)/System.Tpo -c -o System.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/System.Tpo $(DEPDIR)/System.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c' object='System.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o System.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/System.c
+
+Text.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Text.lo -MD -MP -MF $(DEPDIR)/Text.Tpo -c -o Text.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Text.Tpo $(DEPDIR)/Text.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c' object='Text.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Text.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Text.c
+
+Timestamp.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Timestamp.lo -MD -MP -MF $(DEPDIR)/Timestamp.Tpo -c -o Timestamp.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Timestamp.Tpo $(DEPDIR)/Timestamp.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c' object='Timestamp.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Timestamp.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/Timestamp.c
+
+TimestampNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TimestampNull.lo -MD -MP -MF $(DEPDIR)/TimestampNull.Tpo -c -o TimestampNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TimestampNull.Tpo $(DEPDIR)/TimestampNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c' object='TimestampNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TimestampNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampNull.c
+
+TimestampStd.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TimestampStd.lo -MD -MP -MF $(DEPDIR)/TimestampStd.Tpo -c -o TimestampStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TimestampStd.Tpo $(DEPDIR)/TimestampStd.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c' object='TimestampStd.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TimestampStd.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/TimestampStd.c
+
+Cache.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Cache.lo -MD -MP -MF $(DEPDIR)/Cache.Tpo -c -o Cache.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Cache.Tpo $(DEPDIR)/Cache.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c' object='Cache.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Cache.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Cache.c
+
+CacheSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT CacheSupportNull.lo -MD -MP -MF $(DEPDIR)/CacheSupportNull.Tpo -c -o CacheSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/CacheSupportNull.Tpo $(DEPDIR)/CacheSupportNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c' object='CacheSupportNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o CacheSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/CacheSupportNull.c
+
+GateH.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateH.lo -MD -MP -MF $(DEPDIR)/GateH.Tpo -c -o GateH.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateH.Tpo $(DEPDIR)/GateH.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c' object='GateH.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateH.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateH.c
+
+GateProcess.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateProcess.lo -MD -MP -MF $(DEPDIR)/GateProcess.Tpo -c -o GateProcess.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateProcess.Tpo $(DEPDIR)/GateProcess.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c' object='GateProcess.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateProcess.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcess.c
+
+GateProcessSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateProcessSupportNull.lo -MD -MP -MF $(DEPDIR)/GateProcessSupportNull.Tpo -c -o GateProcessSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateProcessSupportNull.Tpo $(DEPDIR)/GateProcessSupportNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c' object='GateProcessSupportNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateProcessSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateProcessSupportNull.c
+
+GateThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateThread.lo -MD -MP -MF $(DEPDIR)/GateThread.Tpo -c -o GateThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateThread.Tpo $(DEPDIR)/GateThread.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c' object='GateThread.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThread.c
+
+GateThreadSupportNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateThreadSupportNull.lo -MD -MP -MF $(DEPDIR)/GateThreadSupportNull.Tpo -c -o GateThreadSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateThreadSupportNull.Tpo $(DEPDIR)/GateThreadSupportNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c' object='GateThreadSupportNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateThreadSupportNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/GateThreadSupportNull.c
+
+Semaphore.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Semaphore.lo -MD -MP -MF $(DEPDIR)/Semaphore.Tpo -c -o Semaphore.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Semaphore.Tpo $(DEPDIR)/Semaphore.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c' object='Semaphore.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Semaphore.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Semaphore.c
+
+SemProcess.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SemProcess.lo -MD -MP -MF $(DEPDIR)/SemProcess.Tpo -c -o SemProcess.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SemProcess.Tpo $(DEPDIR)/SemProcess.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c' object='SemProcess.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SemProcess.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemProcess.c
+
+SemThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SemThread.lo -MD -MP -MF $(DEPDIR)/SemThread.Tpo -c -o SemThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SemThread.Tpo $(DEPDIR)/SemThread.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c' object='SemThread.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SemThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SemThread.c
+
+Sync.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Sync.lo -MD -MP -MF $(DEPDIR)/Sync.Tpo -c -o Sync.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Sync.Tpo $(DEPDIR)/Sync.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c' object='Sync.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Sync.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Sync.c
+
+SyncGeneric.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SyncGeneric.lo -MD -MP -MF $(DEPDIR)/SyncGeneric.Tpo -c -o SyncGeneric.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SyncGeneric.Tpo $(DEPDIR)/SyncGeneric.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c' object='SyncGeneric.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SyncGeneric.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncGeneric.c
+
+SyncNull.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SyncNull.lo -MD -MP -MF $(DEPDIR)/SyncNull.Tpo -c -o SyncNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SyncNull.Tpo $(DEPDIR)/SyncNull.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c' object='SyncNull.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SyncNull.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncNull.c
+
+SyncSemThread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SyncSemThread.lo -MD -MP -MF $(DEPDIR)/SyncSemThread.Tpo -c -o SyncSemThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SyncSemThread.Tpo $(DEPDIR)/SyncSemThread.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c' object='SyncSemThread.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SyncSemThread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/SyncSemThread.c
+
+Thread.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT Thread.lo -MD -MP -MF $(DEPDIR)/Thread.Tpo -c -o Thread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Thread.Tpo $(DEPDIR)/Thread.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c' object='Thread.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o Thread.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/Thread.c
+
+GateProcessSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateProcessSupport.lo -MD -MP -MF $(DEPDIR)/GateProcessSupport.Tpo -c -o GateProcessSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateProcessSupport.Tpo $(DEPDIR)/GateProcessSupport.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c' object='GateProcessSupport.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateProcessSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateProcessSupport.c
+
+GateThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT GateThreadSupport.lo -MD -MP -MF $(DEPDIR)/GateThreadSupport.Tpo -c -o GateThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/GateThreadSupport.Tpo $(DEPDIR)/GateThreadSupport.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c' object='GateThreadSupport.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o GateThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/GateThreadSupport.c
+
+SemProcessSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SemProcessSupport.lo -MD -MP -MF $(DEPDIR)/SemProcessSupport.Tpo -c -o SemProcessSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SemProcessSupport.Tpo $(DEPDIR)/SemProcessSupport.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c' object='SemProcessSupport.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SemProcessSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemProcessSupport.c
+
+SemThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT SemThreadSupport.lo -MD -MP -MF $(DEPDIR)/SemThreadSupport.Tpo -c -o SemThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/SemThreadSupport.Tpo $(DEPDIR)/SemThreadSupport.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c' object='SemThreadSupport.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SemThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c
+
+ThreadSupport.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT ThreadSupport.lo -MD -MP -MF $(DEPDIR)/ThreadSupport.Tpo -c -o ThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ThreadSupport.Tpo $(DEPDIR)/ThreadSupport.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c' object='ThreadSupport.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o ThreadSupport.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c
+
+TimestampPosix.lo: $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TimestampPosix.lo -MD -MP -MF $(DEPDIR)/TimestampPosix.Tpo -c -o TimestampPosix.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TimestampPosix.Tpo $(DEPDIR)/TimestampPosix.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c' object='TimestampPosix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TimestampPosix.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c
+
+preConfig_pv5T.lo: $(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT preConfig_pv5T.lo -MD -MP -MF $(DEPDIR)/preConfig_pv5T.Tpo -c -o preConfig_pv5T.lo `test -f '$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/preConfig_pv5T.Tpo $(DEPDIR)/preConfig_pv5T.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c' object='preConfig_pv5T.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o preConfig_pv5T.lo `test -f '$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
+
+rtcfg.lo: $(TIDSP_PATH_RTCFG_SRC)/rtcfg.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT rtcfg.lo -MD -MP -MF $(DEPDIR)/rtcfg.Tpo -c -o rtcfg.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/rtcfg.Tpo $(DEPDIR)/rtcfg.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_RTCFG_SRC)/rtcfg.c' object='rtcfg.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o rtcfg.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg.c
+
+rtcfg_fcinit.lo: $(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT rtcfg_fcinit.lo -MD -MP -MF $(DEPDIR)/rtcfg_fcinit.Tpo -c -o rtcfg_fcinit.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/rtcfg_fcinit.Tpo $(DEPDIR)/rtcfg_fcinit.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c' object='rtcfg_fcinit.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o rtcfg_fcinit.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg_fcinit.c
+
+rtcfg_remote_config.lo: $(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT rtcfg_remote_config.lo -MD -MP -MF $(DEPDIR)/rtcfg_remote_config.Tpo -c -o rtcfg_remote_config.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/rtcfg_remote_config.Tpo $(DEPDIR)/rtcfg_remote_config.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c' object='rtcfg_remote_config.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o rtcfg_remote_config.lo `test -f '$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c' || echo '$(srcdir)/'`$(TIDSP_PATH_RTCFG_SRC)/rtcfg_remote_config.c
+
+test_cmem_alloc.o: $(top_srcdir)/tests/test_cmem_alloc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_cmem_alloc.o -MD -MP -MF $(DEPDIR)/test_cmem_alloc.Tpo -c -o test_cmem_alloc.o `test -f '$(top_srcdir)/tests/test_cmem_alloc.c' || echo '$(srcdir)/'`$(top_srcdir)/tests/test_cmem_alloc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/test_cmem_alloc.Tpo $(DEPDIR)/test_cmem_alloc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(top_srcdir)/tests/test_cmem_alloc.c' object='test_cmem_alloc.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_cmem_alloc.o `test -f '$(top_srcdir)/tests/test_cmem_alloc.c' || echo '$(srcdir)/'`$(top_srcdir)/tests/test_cmem_alloc.c
+
+test_cmem_alloc.obj: $(top_srcdir)/tests/test_cmem_alloc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT test_cmem_alloc.obj -MD -MP -MF $(DEPDIR)/test_cmem_alloc.Tpo -c -o test_cmem_alloc.obj `if test -f '$(top_srcdir)/tests/test_cmem_alloc.c'; then $(CYGPATH_W) '$(top_srcdir)/tests/test_cmem_alloc.c'; else $(CYGPATH_W) '$(srcdir)/$(top_srcdir)/tests/test_cmem_alloc.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/test_cmem_alloc.Tpo $(DEPDIR)/test_cmem_alloc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(top_srcdir)/tests/test_cmem_alloc.c' object='test_cmem_alloc.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o test_cmem_alloc.obj `if test -f '$(top_srcdir)/tests/test_cmem_alloc.c'; then $(CYGPATH_W) '$(top_srcdir)/tests/test_cmem_alloc.c'; else $(CYGPATH_W) '$(srcdir)/$(top_srcdir)/tests/test_cmem_alloc.c'; fi`
+
 .cpp.o:
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
-@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ $<
 
 .cpp.obj:
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
-@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
-@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .cpp.lo:
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
-@am__fastdepCXX_TRUE@	$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+xdc_init.lo: $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT xdc_init.lo -MD -MP -MF $(DEPDIR)/xdc_init.Tpo -c -o xdc_init.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/xdc_init.Tpo $(DEPDIR)/xdc_init.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp' object='xdc_init.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o xdc_init.lo `test -f '$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp' || echo '$(srcdir)/'`$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo
 
 clean-libtool:
-	-rm -rf $(TIDSP_PATH_CSTUBS_SRC)/.libs $(TIDSP_PATH_CSTUBS_SRC)/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/.libs $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/.libs $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/.libs $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/.libs $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/.libs $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/.libs $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/_libs
-	-rm -rf $(TIDSP_PATH_OSAL_SRC)/.libs $(TIDSP_PATH_OSAL_SRC)/_libs
-	-rm -rf $(TIDSP_PATH_RTCFG_SRC)/.libs $(TIDSP_PATH_RTCFG_SRC)/_libs
-	-rm -rf $(top_srcdir)/src/.libs $(top_srcdir)/src/_libs
 	-rm -rf .libs _libs
 
 ID: $(am__tagged_files)
@@ -1423,28 +1503,6 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
-	-test -z "$(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_CSTUBS_SRC)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_CSTUBS_SRC)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_SRC)/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_OSAL_SRC)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_OSAL_SRC)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp)" || rm -f $(TIDSP_PATH_RTCFG_SRC)/$(am__dirstamp)
-	-test -z "$(top_srcdir)/src/$(DEPDIR)/$(am__dirstamp)" || rm -f $(top_srcdir)/src/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(top_srcdir)/src/$(am__dirstamp)" || rm -f $(top_srcdir)/src/$(am__dirstamp)
-	-test -z "$(top_srcdir)/tests/$(DEPDIR)/$(am__dirstamp)" || rm -f $(top_srcdir)/tests/$(DEPDIR)/$(am__dirstamp)
-	-test -z "$(top_srcdir)/tests/$(am__dirstamp)" || rm -f $(top_srcdir)/tests/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -1455,7 +1513,7 @@ clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
 	clean-noinstLTLIBRARIES clean-noinstPROGRAMS mostlyclean-am
 
 distclean: distclean-am
-	-rm -rf $(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR) $(TIDSP_PATH_OSAL_SRC)/$(DEPDIR) $(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR) $(top_srcdir)/src/$(DEPDIR) $(top_srcdir)/tests/$(DEPDIR)
+	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1501,7 +1559,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-	-rm -rf $(TIDSP_PATH_CSTUBS_SRC)/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/$(DEPDIR) $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/knl/$(DEPDIR) $(TIDSP_PATH_OSAL_SRC)/$(DEPDIR) $(TIDSP_PATH_RTCFG_SRC)/$(DEPDIR) $(top_srcdir)/src/$(DEPDIR) $(top_srcdir)/tests/$(DEPDIR)
+	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

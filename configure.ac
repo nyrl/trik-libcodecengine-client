@@ -61,7 +61,7 @@ AC_SUBST([TIDSP_EXPORT_CPPFLAGS_DEFS], ["-Dxdc_target_types__=gnu/targets/arm/st
 AC_SUBST([TIDSP_EXPORT_CPPFLAGS_INCS], ["-I${with_ti_dsp_xdctools}/packages -I${with_ti_dsp_xdais}/packages -I${with_ti_dsp_ce}/packages"])
 AC_SUBST([TIDSP_PRIVATE_CPPFLAGS_INCS], ["-I${with_ti_dsp_fc}/packages -I${with_ti_dsp_osal}/packages"])
 AC_SUBST([TIDSP_EXPORT_LDFLAGS], ["-L${with_ti_dsp_xdctools}/packages -L${with_ti_dsp_xdais}/packages -L${with_ti_dsp_ce}/packages -L${with_ti_dsp_fc}/packages -L${with_ti_dsp_osal}/packages -L${with_ti_dsp_cmem}/packages -L${with_ti_dsp_syslink}/packages"])
-AC_SUBST([TIDSP_EXPORT_LDLIBS], ["-Wl,--start-group,-lcodecengine-client,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/ce_remote_release.cmd,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/fc_release.cmd,--end-group -lpthread -lrt -ldl"])
+AC_SUBST([TIDSP_EXPORT_LDLIBS], ["-Wl,--start-group,-lcodecengine-client,-L${with_ti_dsp_ce}/cetools/packages/,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/ce_remote_release.cmd,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/fc_release.cmd,--end-group -lpthread -lrt -ldl"])
 #AC_SUBST([TIDSP_PRIVATE_LDLIBS], ["-lpthread -lrt -ldl"])
 CPPFLAGS+=" ${TIDSP_EXPORT_CPPFLAGS_DEFS} ${TIDSP_EXPORT_CPPFLAGS_INCS} ${TIDSP_PRIVATE_CPPFLAGS_INCS}"
 #LDFLAGS+=" ${TIDSP_PRIVATE_LDLIBS}"

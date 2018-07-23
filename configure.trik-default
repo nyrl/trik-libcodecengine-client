@@ -1,11 +1,13 @@
 #!/bin/sh
 TIDIR=/home/me/trik/ti/
+OECORE_TARGET_SYSROOT=${OECORE_TARGET_SYSROOT:-/opt/trik-sdk/sysroots/arm926ejse-oe-linux-gnueabi}
 ./configure $CONFIGURE_FLAGS \
+  --prefix=${OECORE_TARGET_SYSROOT}/usr/local \
   --with-ti-dsp-xdctools=${TIDIR}xdctools_3_25_06_96 \
   --with-ti-dsp-xdais=${TIDIR}xdais_7_24_00_04 \
-  --with-ti-dsp-ce=${TIDIR}codec_engine_3_24_00_08 \
+  --with-ti-dsp-ce=${TIDIR}codec_engine_3_23_00_07 \
   --with-ti-dsp-fc=${TIDIR}framework_components_3_24_02_15 \
   --with-ti-dsp-osal=${TIDIR}osal_1_24_00_09 \
   --with-ti-dsp-cmem=${TIDIR}linuxutils_3_23_00_01 \
   --with-ti-dsp-syslink=${TIDIR}syslink_2_21_03_11 \
-
+  $*
