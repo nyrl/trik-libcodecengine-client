@@ -1,16 +1,16 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.65])
-AC_INIT([libcodecengine-client], [0.0.1-trunk])
-AM_INIT_AUTOMAKE([foreign color-tests -Wall -Werror])
+AC_PREREQ([2.69])
+AC_INIT([libcodecengine-client],[0.0.3-trunk])
+AM_INIT_AUTOMAKE([foreign color-tests -Wall -Wno-portability tar-pax no-dist-gzip dist-xz])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 
 # We want more functions
-AC_GNU_SOURCE
+AC_USE_SYSTEM_EXTENSIONS
 
 
 # Checks for programs.
@@ -22,7 +22,7 @@ AM_PROG_AR
 
 # Checks for libraries.
 LT_INIT([disable-shared]) # OSAL stuff has unresolved symbols at link time if linked as DSO
-AC_PROG_LIBTOOL
+LT_INIT
 PKG_PROG_PKG_CONFIG
 
 
@@ -61,7 +61,7 @@ AC_SUBST([TIDSP_EXPORT_CPPFLAGS_DEFS], ["-Dxdc_target_types__=gnu/targets/arm/st
 AC_SUBST([TIDSP_EXPORT_CPPFLAGS_INCS], ["-I${with_ti_dsp_xdctools}/packages -I${with_ti_dsp_xdais}/packages -I${with_ti_dsp_ce}/packages"])
 AC_SUBST([TIDSP_PRIVATE_CPPFLAGS_INCS], ["-I${with_ti_dsp_fc}/packages -I${with_ti_dsp_osal}/packages"])
 AC_SUBST([TIDSP_EXPORT_LDFLAGS], ["-L${with_ti_dsp_xdctools}/packages -L${with_ti_dsp_xdais}/packages -L${with_ti_dsp_ce}/packages -L${with_ti_dsp_fc}/packages -L${with_ti_dsp_osal}/packages -L${with_ti_dsp_cmem}/packages -L${with_ti_dsp_syslink}/packages"])
-AC_SUBST([TIDSP_EXPORT_LDLIBS], ["-Wl,--start-group,-lcodecengine-client,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAPL138/ce_remote_release.cmd,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAPL138/fc_release.cmd,--end-group -lpthread -lrt -ldl"])
+AC_SUBST([TIDSP_EXPORT_LDLIBS], ["-Wl,--start-group,-lcodecengine-client,-L${with_ti_dsp_ce}/cetools/packages/,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/ce_remote_release.cmd,${with_ti_dsp_ce}/packages/ti/sdo/ce/utils/rtcfg/linux/OMAP3530/fc_release.cmd,--end-group -lpthread -lrt -ldl"])
 #AC_SUBST([TIDSP_PRIVATE_LDLIBS], ["-lpthread -lrt -ldl"])
 CPPFLAGS+=" ${TIDSP_EXPORT_CPPFLAGS_DEFS} ${TIDSP_EXPORT_CPPFLAGS_INCS} ${TIDSP_PRIVATE_CPPFLAGS_INCS}"
 #LDFLAGS+=" ${TIDSP_PRIVATE_LDLIBS}"

@@ -1,8 +1,5 @@
 AM_CPPFLAGS		= -I$(top_srcdir)/include -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-maybe-uninitialized -fno-strict-aliasing
 
-#LDADD			= libcodecengine-client.la
-
-
 lib_LTLIBRARIES 	= libcodecengine-client.la
 
 nodist_libcodecengine_client_la_SOURCES	= $(top_srcdir)/config.h
@@ -62,14 +59,11 @@ libpriv_osal_la_SOURCES			= \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/SemThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/ThreadSupport.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/xdcruntime/linux/TimestampPosix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/ti/sdo/utils/loggers/LoggerSysTID_posix.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/cstubs/LoggerFlex.c \
-					  $(TIDSP_PATH_OSAL_ROOT)/packages/xdcruntime/heaps/HeapStdAlign.c \
 					  $(TIDSP_PATH_OSAL_ROOT)/sources/xdc/runtime/xdc_init.cpp \
 					  $(TIDSP_PATH_OSAL_SRC)/preConfig_pv5T.c
 
 libpriv_cstubs_la_SOURCES		= \
-					  $(TIDSP_PATH_CSTUBS_SRC)/LoggerPosix.c
+					  $(TIDSP_PATH_OSAL_ROOT)/packages/cstubs/posix/LoggerPosix.c
 
 
 
@@ -79,6 +73,5 @@ noinst_PROGRAMS				= $(TESTS)
 
 test_cmem_alloc_SOURCES			= $(top_srcdir)/tests/test_cmem_alloc.c
 test_cmem_alloc_LDFLAGS			= $(LDFLAGS) $(TIDSP_EXPORT_LDFLAGS) -L$(builddir)/.libs
-test_cmem_alloc_LDADD			= $(LDADD) $(TIDSP_EXPORT_LDLIBS)
-
+test_cmem_alloc_LDADD			= $(LDADD) $(TIDSP_EXPORT_LDLIBS) libcodecengine-client.la
 

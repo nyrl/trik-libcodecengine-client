@@ -1,15 +1,13 @@
 #!/bin/sh
-
-TRIK_SDK_SYSROOT_DIR=${PKG_CONFIG_SYSROOT_DIR}
-TRIK_DSPSDK_SYSROOT_DIR=/opt/trik-dsp
-
-./configure $CONFIGURE_FLAGS\
-    --with-ti-dsp-xdctools=${TRIK_DSPSDK_SYSROOT_DIR}/xdctools_3_24_07_73\
-    --with-ti-dsp-xdais=${TRIK_DSPSDK_SYSROOT_DIR}/xdais_7_23_00_06\
-    --with-ti-dsp-ce=${TRIK_DSPSDK_SYSROOT_DIR}/codec_engine_3_23_00_07\
-    --with-ti-dsp-fc=${TRIK_DSPSDK_SYSROOT_DIR}/framework_components_3_23_03_17\
-    --with-ti-dsp-osal=${TRIK_DSPSDK_SYSROOT_DIR}/osal_1_23_00_04\
-    --with-ti-dsp-cmem=${TRIK_DSPSDK_SYSROOT_DIR}/linuxutils_3_23_00_01\
-    --with-ti-dsp-syslink=${TRIK_DSPSDK_SYSROOT_DIR}/syslink_2_21_01_05\
-    --prefix=${PKG_CONFIG_SYSROOT_DIR}/usr
-
+TIDIR=/home/me/trik/ti/
+OECORE_TARGET_SYSROOT=${OECORE_TARGET_SYSROOT:-/opt/trik-sdk/sysroots/arm926ejse-oe-linux-gnueabi}
+./configure $CONFIGURE_FLAGS \
+  --prefix=${OECORE_TARGET_SYSROOT}/usr/local \
+  --with-ti-dsp-xdctools=${TIDIR}xdctools_3_25_06_96 \
+  --with-ti-dsp-xdais=${TIDIR}xdais_7_24_00_04 \
+  --with-ti-dsp-ce=${TIDIR}codec_engine_3_23_00_07 \
+  --with-ti-dsp-fc=${TIDIR}framework_components_3_24_02_15 \
+  --with-ti-dsp-osal=${TIDIR}osal_1_24_00_09 \
+  --with-ti-dsp-cmem=${TIDIR}linuxutils_3_23_00_01 \
+  --with-ti-dsp-syslink=${TIDIR}syslink_2_21_03_11 \
+  $*
